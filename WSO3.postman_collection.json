@@ -1,0 +1,1498 @@
+{
+	"info": {
+		"_postman_id": "5f5f2b2c-aace-4c63-804a-dae8d6ae85b5",
+		"name": "WSO3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"777777777798_777777777798\",\n    \"password\": \"777777777798_777777777798\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"login\": \"777777777798_777777777798\",\n    \"password\": \"777777777798_777777777798\",\n    \"roles\": [\n        {\n            \"role\": \"ADMIN\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grant role to user",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entityId\": 1,\n    \"role\": \"DZO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/grant-role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"grant-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create users",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Basic YWRtaW46YWRtaW4="
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Cookie",
+								"value": "BAPPSSessionId=MTYxNTI4Njk3NnxEdi1CQkFFQ180SUFBUkFCRUFBQVV2LUNBQUVHYzNSeWFXNW5EQllBRkdGdWIyNTViVzkxYzE5elpYTnphVzl1WDJsa0JuTjBjbWx1Wnd3bUFDUXdNMkZpTVROaU15MDNObVUzTFRSalpEUXRZams0WXkxbU9EZzBZbVUxWmpnd01HRT18RmVV4PEygzYpW30T7Hh0hUNusqWw0xbr4MvFocTaIcc=; JSESSIONID=EF515CE12F9B010035EB327138628458"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"login\": \"eshop13\",\n        \"password\": \"eshop13\",\n        \"roles\": [\n            {\n                \"role\": \"ADMIN\"\n            },\n            {\n                \"role\": \"DZO\"\n            }\n        ]\n    },\n    {\n        \"login\": \"eshop11\",\n        \"password\": \"eshop11\",\n        \"roles\": [\n            {\n                \"role\": \"ADMIN\"\n            }\n        ]\n    },\n    {\n        \"login\": \"eshop14\",\n        \"password\": \"eshop14\"\n    },\n    {\n        \"login\": \"eshop15\",\n        \"password\": \"eshop15\",\n        \"roles\": []\n    }\n]"
+						},
+						"url": {
+							"raw": "{{url}}/user/batch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Role",
+			"item": [
+				{
+					"name": "Get all roles",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/role/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"role",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "DZO",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create roles",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"TEST\", \"TEST2\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/role/batch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"role",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete role",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/role/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"role",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Proxy service",
+			"item": [
+				{
+					"name": "Get all proxy services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/proxy-settings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy-settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proxy service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service\": \"/planproxy\",\n    \"url\": \"http://localhost:17102/api/plan/proxy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proxy-settings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy-settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create proxy services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"service\": \"/test3\",\n        \"url\": \"test\",\n        \"roles\": [\n            {\n                \"role\": \"ADMIN\"\n            },\n            {\n                \"role\": \"DZO\"\n            }\n        ]\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proxy-settings/batch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy-settings",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update proxy service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 2,\n    \"service\": \"/planproxy\",\n    \"url\": \"http://localhost:17102/api/plan/proxy\",\n    \"roles\": [{\n        \"role\": \"DZO\"\n    }]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proxy-settings/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy-settings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grant role to proxy service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entityId\": 2,\n    \"role\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proxy-settings/grant-role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy-settings",
+								"grant-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete proxy service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/proxy-settings/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy-settings",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Execute proxy service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/proxy/wiki-proxy-service",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"proxy",
+								"wiki-proxy-service"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Data service",
+			"item": [
+				{
+					"name": "Get all data services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/data-settings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create data service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"service\": \"/purchases\",\n    \"databaseConfiguration\": {\n        \"id\": 1,\n        \"connectionString\": \"jdbc:postgresql://10.223.56.19:5432/eproc?autoReconnect=true&useSSL=false\",\n        \"username\": \"eproc\",\n        \"password\": \"EMAn54dSQR\"\n    },\n    \"roles\": [\n        {\n            \"role\": \"DZO\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create data services",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"service\": \"/dictionary3\",\n        \"databaseConfiguration\": {\n            \"id\": 1,\n            \"connectionString\": \"jdbc:postgresql://localhost:5432/c_telecomkz_alabs_trading_platform_eproc\",\n            \"username\": \"c_telecomkz_alabs_trading_platform_eproc\",\n            \"password\": \"c_telecomkz_alabs_trading_platform_eproc\"\n        },\n        \"roles\": [\n            {\n                \"role\": \"ADMIN\"\n            }\n        ]\n    },\n    {\n        \"service\": \"/dictionary4\",\n        \"databaseConfiguration\": {\n            \"id\": 1,\n            \"connectionString\": \"jdbc:postgresql://localhost:5432/c_telecomkz_alabs_trading_platform_eproc\",\n            \"username\": \"c_telecomkz_alabs_trading_platform_eproc\",\n            \"password\": \"c_telecomkz_alabs_trading_platform_eproc\"\n        },\n        \"roles\": [\n            {\n                \"role\": \"ADMIN\"\n            },\n            {\n                \"role\": \"DZO\"\n            }\n        ]\n    },\n    {\n        \"service\": \"/dictionary5\",\n        \"databaseConfiguration\": {\n            \"id\": 1,\n            \"connectionString\": \"jdbc:postgresql://localhost:5432/c_telecomkz_alabs_trading_platform_eproc\",\n            \"username\": \"c_telecomkz_alabs_trading_platform_eproc\",\n            \"password\": \"c_telecomkz_alabs_trading_platform_eproc\"\n        },\n        \"roles\": [\n        ]\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/batch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update data service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 1,\n        \"service\": \"/dictionary\",\n        \"databaseConfiguration\": {\n            \"id\": 1,\n            \"connectionString\": \"jdbc:postgresql://localhost:5432/c_telecomkz_alabs_trading_platform_eproc\",\n            \"username\": \"c_telecomkz_alabs_trading_platform_eproc\",\n            \"password\": \"c_telecomkz_alabs_trading_platform_eproc\"\n        },\n        \"roles\": [\n            {\n                \"role\": \"ADMIN\"\n            }\n        ]\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete data service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Grant role to data service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"entityId\": 2,\n    \"role\": \"ADMIN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/grant-role",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"grant-role"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Query",
+			"item": [
+				{
+					"name": "Get all queries of dataId",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/data-settings/1/query/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"1",
+								"query",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create query for data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"/all\",\n    \"sql\": \"SELECT * FROM dictionary\",\n    \"pageable\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/2/query",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"2",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create queries",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"/all\",\n        \"sql\": \"SELECT * FROM dictionary\",\n        \"pageable\": false\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/2/query",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"2",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update query for data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3,\n    \"name\": \"/advert-result\",\n    \"sql\": \"select pl.lot_id as id, pl.created_date as created_date, case when pl.flag_winner is true then 'winner' when pl.admitted is true then 'potentialSupplier' when pl.admitted is false then 'rejected' else 'undefined' end as h_state_member_id, to_char(lsh.status_date_time, 'DD.MM.YYYY HH24:MI') as finish_date, c.identifier as bin_iin, pl.price as price from participation_lot pl left join participation_lot_status_history plsh on plsh.id = pl.status_history_id left join participation p on pl.participation_id = p.id left join company c on c.id = p.company_id left join lot_status_history lsh on pl.lot_id = lsh.lot_id and lsh.status is not null and lsh.status in ('EXECUTED', 'NEGFAILED') where (:advertId is null or :advertId = p.advert_id) order by greatest(pl.last_modified_date, pl.created_date, plsh.last_modified_date, plsh.created_date) asc\",\n    \"pageable\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/data-settings/1/query",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"1",
+								"query"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete query for data",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/data-settings/2/query/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data-settings",
+								"2",
+								"query",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Execute query in data service",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/data/dictionary/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"data",
+								"dictionary",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "DatabaseConfiguration",
+			"item": [
+				{
+					"name": "Get all database configurations",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/database-configuration/all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"database-configuration",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create database configuration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"connectionString\": \"jdbc:postgresql://localhost:5432/c_telecomkz_alabs_trading_platform_eproc\",\n    \"username\": \"c_telecomkz_alabs_trading_platform_eproc\",\n    \"password\": \"c_telecomkz_alabs_trading_platform_eproc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/database-configuration",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"database-configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create database configurations",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"connectionString\": \"jdbc:postgresql://localhost:5432/c_telecomkz_alabs_trading_platform_eproc\",\n        \"username\": \"c_telecomkz_alabs_trading_platform_eproc\",\n        \"password\": \"c_telecomkz_alabs_trading_platform_eproc\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/database-configuration/batch",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"database-configuration",
+								"batch"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete database configuration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/database-configuration/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"database-configuration",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test database configuration",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/database-configuration/test/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"database-configuration",
+								"test",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:9444"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+done 1 in user get all return roles
+done 2 in data get all return roles
+done in proxy get all return roles
+
+
+done 7 add pagination
+done 8 rename proxy fields
+done 9 rm id from roles
+6 add xml
+4 add update date service
+5 add update proxy service
+10 add new data source
