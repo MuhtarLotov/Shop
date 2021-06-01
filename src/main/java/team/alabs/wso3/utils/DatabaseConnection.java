@@ -4,8 +4,6 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.stereotype.Component;
 import team.alabs.wso3.entity.DatabaseConfiguration;
 import team.alabs.wso3.exception.ValidationException;
-
-import javax.sql.DataSource;
 import java.sql.SQLException;
 
 @Component
