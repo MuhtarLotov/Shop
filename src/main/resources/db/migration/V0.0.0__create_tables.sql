@@ -29,16 +29,18 @@ create table ads
 (
     id          integer primary key autoincrement not null,
     user_id     int not null,
+    product_id  int not null,
     count       int not null,
     price       double not null,
     isActive    boolean,
 
-    FOREIGN KEY (user_id) REFERENCES user (id)
+    FOREIGN KEY (user_id) REFERENCES user (id),
+    FOREIGN KEY (product_id) REFERENCES product (id)
 );
 
 create table buy_and_sell
 (
-    id          integer primary key autoincrement not null,
+    id           integer primary key autoincrement not null,
     buy_user_id  int not null,
     sell_user_id int not null,
     ads_id      int not null,
@@ -47,6 +49,7 @@ create table buy_and_sell
     isActive    boolean,
 
     FOREIGN KEY (buy_user_id) REFERENCES user (id),
-    FOREIGN KEY (sell_user_id) REFERENCES user (id)
+    FOREIGN KEY (sell_user_id) REFERENCES user (id),
+    FOREIGN KEY (ads_id) REFERENCES ads (id)
 );
 

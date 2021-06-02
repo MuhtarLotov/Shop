@@ -18,6 +18,7 @@ public class Ads {
     private Integer count;
     private Double price;
     private boolean isActive = true;
+
     @ManyToOne
     private Product product;
     @ManyToOne

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import team.alabs.wso3.converter.BuyAndSellConverter;
 import team.alabs.wso3.entity.Ads;
 import team.alabs.wso3.entity.BuyAndSell;
-import team.alabs.wso3.entity.User;
 import team.alabs.wso3.exception.ValidationException;
 import team.alabs.wso3.model.BuyAndSellDto;
 import team.alabs.wso3.repository.AdsRepository;
