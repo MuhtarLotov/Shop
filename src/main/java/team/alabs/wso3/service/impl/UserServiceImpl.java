@@ -1,11 +1,14 @@
 package team.alabs.wso3.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import team.alabs.wso3.Constants;
 import team.alabs.wso3.converter.UserCreateDtoConverter;
 import team.alabs.wso3.converter.UserDtoConverter;
+import team.alabs.wso3.entity.Ads;
+import team.alabs.wso3.entity.BuyAndSell;
 import team.alabs.wso3.entity.Role;
 import team.alabs.wso3.entity.User;
 import team.alabs.wso3.exception.ValidationException;
@@ -13,14 +16,13 @@ import team.alabs.wso3.model.GrantRoleDto;
 import team.alabs.wso3.model.UserCreateDto;
 import team.alabs.wso3.model.UserDto;
 import team.alabs.wso3.model.UserUpdateDto;
+import team.alabs.wso3.repository.BuyAndSellRepository;
 import team.alabs.wso3.repository.UserRepository;
 import team.alabs.wso3.service.RoleService;
 import team.alabs.wso3.service.UserService;
 
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -30,6 +32,7 @@ public class UserServiceImpl implements UserService {
     private final RoleService roleService;
     private final UserCreateDtoConverter userCreateDtoConverter;
     private final UserDtoConverter userDtoConverter;
+    private final BuyAndSellRepository buyAndSellRepository;
 
     @Override
     public List<UserDto> getAllUsers() {
