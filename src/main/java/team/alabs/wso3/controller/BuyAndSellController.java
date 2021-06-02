@@ -32,4 +32,7 @@ public class BuyAndSellController {
     public void deleteBuyAndSell(@RequestParam(value="id") Integer id) {
         buyAndSellService.delete(id);
     }
+
+
+
 }

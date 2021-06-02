@@ -32,7 +32,7 @@ public class AdsServiceImpl implements AdsService {
             adsRepository.save(adsOpt.get());
         }
         else
-            new ValidationException("no ads with this id found: ", id);
+          throw new ValidationException("no ads with this id found: ", id);
     }
     
     @Override
@@ -42,4 +42,5 @@ public class AdsServiceImpl implements AdsService {
         adsDto = adsConverter.convertToDto(ads);
         return adsDto;
     }
+
 }
