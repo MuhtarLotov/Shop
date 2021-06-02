@@ -14,6 +14,7 @@ public class AdsDto {
 
     private Integer id;
     private Integer count;
-    private Integer userId;
+    private UserDto user;
+    private ProductDto product;
     private Double price;
 }

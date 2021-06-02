@@ -1,11 +1,15 @@
 package team.alabs.wso3.converter;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import team.alabs.wso3.entity.Ads;
 import team.alabs.wso3.model.AdsDto;
 
 @Component
+@RequiredArgsConstructor
 public class AdsConverter implements Converter<Ads, AdsDto> {
+    private final UserDtoConverter userDtoConverter;
+    private final ProductConverter productConverter;
 
     @Override
     public AdsDto convertToDto(Ads ads) {
@@ -13,7 +17,8 @@ public class AdsConverter implements Converter<Ads, AdsDto> {
         adsDto.setId(ads.getId());
         adsDto.setCount(ads.getCount());
         adsDto.setPrice(ads.getPrice());
-        adsDto.setUserId(ads.getUserId());
+        adsDto.setUser(userDtoConverter.convertToDto(ads.getUser()));
+        adsDto.setProduct(productConverter.convertToDto(ads.getProduct()));
         return adsDto;
     }
 
@@ -24,7 +29,8 @@ public class AdsConverter implements Converter<Ads, AdsDto> {
         ads.setId(adsDto.getId());}
         ads.setCount(adsDto.getCount());
         ads.setPrice(adsDto.getPrice());
-        ads.setUserId(adsDto.getUserId());
+        ads.setUser(userDtoConverter.convertToEntity(adsDto.getUser()));
+        ads.setProduct(productConverter.convertToEntity(adsDto.getProduct()));
         return ads;
     }
 
