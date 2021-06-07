@@ -1,8 +1,18 @@
+create table basket
+(
+    id           integer primary key autoincrement not null,
+    is_active    boolean
+);
+
 create table user
 (
     id          integer primary key autoincrement not null,
     login       varchar(225) UNIQUE not null,
-    password    varchar(225)        not null
+    password    varchar(225)        not null,
+    basket_id   integer,
+
+    FOREIGN KEY (basket_id) REFERENCES basket (id)
+
 );
 
 create table role
@@ -32,7 +42,7 @@ create table ads
     product_id  int not null,
     count       int not null,
     price       double not null,
-    isActive    boolean,
+    is_active    boolean,
 
     FOREIGN KEY (user_id) REFERENCES user (id),
     FOREIGN KEY (product_id) REFERENCES product (id)
@@ -43,13 +53,19 @@ create table buy_and_sell
     id           integer primary key autoincrement not null,
     buy_user_id  int not null,
     sell_user_id int not null,
-    ads_id      int not null,
-    count       int not null,
-    price       double not null,
-    isActive    boolean,
+    ads_id       int not null,
+    count        int not null,
+    price        double not null,
+    is_active     boolean,
+    status       varchar(10) not null,
+    basket_id    int,
 
+    FOREIGN KEY (basket_id) REFERENCES basket (id),
     FOREIGN KEY (buy_user_id) REFERENCES user (id),
     FOREIGN KEY (sell_user_id) REFERENCES user (id),
     FOREIGN KEY (ads_id) REFERENCES ads (id)
 );
+
+
+
 
