@@ -91,7 +91,7 @@ public class BuyAndSellServiceImpl implements BuyAndSellService {
             item.setStatus(Status.BUY);
             buyAndSellRepository.save(item);
             Product product = item.getAds().getProduct();
-            message = "Покупка продуктат " + product.getProductName() + "количество " + item.getCount()+"\n";
+            message += "Покупка продуктат " + product.getProductName() + " количество " + item.getCount()+"\n";
         }
         return message;
     }
